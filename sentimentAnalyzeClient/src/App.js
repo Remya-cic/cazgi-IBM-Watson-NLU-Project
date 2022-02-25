@@ -10,10 +10,13 @@ class App extends React.Component {
   value of the state, will be returned. The initial input mode
   is set to text
   */
+ 
+ 
   state = {innercomp:<textarea rows="4" cols="50" id="textinput"/>,
             mode: "text",
           sentimentOutput:[],
-          sentiment:true
+          sentiment:true,
+          title:"Sentiment Analyzer"
         }
   
   /*
@@ -73,8 +76,10 @@ class App extends React.Component {
   
 
   render() {
-    return (  
+    return ( 
+        
       <div className="App">
+        <h1>{this.state.title}</h1>
       <button className="btn btn-info" onClick={()=>{this.renderOutput('text')}}>Text</button>
         <button className="btn btn-dark"  onClick={()=>{this.renderOutput('url')}}>URL</button>
         <br/><br/>
